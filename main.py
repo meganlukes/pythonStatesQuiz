@@ -1,16 +1,14 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+import turtle
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+screen = turtle.Screen()
+image = "blank_states_img.gif"
+screen.addshape(image)
+turtle.shape(image)
 
+def get_mouse_click_coor(x, y):
+    print(x, y)
+turtle.onscreenclick(get_mouse_click_coor)
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+answer_state = screen.textinput(title="Guess the State", prompt="What's another state's name?")
+turtle.mainloop()
