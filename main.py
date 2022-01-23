@@ -38,12 +38,14 @@ while len(states_guessed) < 50 and game:
             print(states_guessed)
 if len(states_guessed) == 50:
     scoreboard.game_over()
-states_to_learn = []
-for state in states_list:
-    if state in states_guessed:
-        pass
-    else:
-        states_to_learn.append(state)
+
+states_to_learn = [state for state in states_list if state not in states_guessed]
+# states_to_learn = []
+# for state in states_list:
+#     if state in states_guessed:
+#         pass
+#     else:
+#         states_to_learn.append(state)
 learn = pandas.DataFrame(states_to_learn)
 learn.to_csv("to_learn.csv")
 turtle.mainloop()
